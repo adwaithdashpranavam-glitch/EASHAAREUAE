@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075985">
+  <meta name="description" content="A manual appointment checking companion with countdowns, reminders, a checklist, and private local logs.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Appointment Check Companion</title>
+</head>
+<body>
+  <header class="hero">
+    <span class="eyebrow">Appointment Check Companion</span>
+    <h1>Stay ready. Check manually.</h1>
+    <p>Use calm reminders, a preparation checklist, and a private attempt log—without automating the official portal.</p>
+    <div class="compliance" role="note">
+      <strong>Manual-use assistant only.</strong>
+      <span>No automated booking, no CAPTCHA solving, no bot actions.</span>
+    </div>
+  </header>
+
+  <main>
+    <nav class="tabs" aria-label="App sections">
+      <button class="tab active" id="dashboard-tab" role="tab" aria-selected="true" aria-controls="dashboard">Dashboard</button>
+      <button class="tab" id="history-tab" role="tab" aria-selected="false" aria-controls="history">Attempt log</button>
+    </nav>
+
+    <section id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+      <div class="grid">
+        <article class="card countdown-card">
+          <p class="label">Next suggested manual check</p>
+          <output id="countdown" aria-live="polite">--:--:--</output>
+          <p id="next-time" class="muted">Calculating…</p>
+          <div id="times-grid" class="times-grid" aria-label="Suggested check times">
+            <div class="time-tile"><span>Morning</span><strong>07:00</strong></div>
+            <div class="time-tile"><span>Mid-morning</span><strong>09:30</strong></div>
+            <div class="time-tile"><span>Midday</span><strong>12:00</strong></div>
+            <div class="time-tile"><span>Afternoon</span><strong>15:30</strong></div>
+          </div>
+        </article>
+
+        <article class="card action-card">
+          <p class="label">Official portal</p>
+          <h2>Ready for a manual check?</h2>
+          <p class="booking-notice">User must complete booking on official site.</p>
+          <a id="open-portal" class="button primary" href="https://icp.gov.ae/" target="_blank" rel="noopener noreferrer">Open official portal ↗</a>
+          <p class="muted small">This opens a new tab. This app never reads, clicks, or enters information there.</p>
+          <div class="result-actions" aria-label="Log check result">
+            <button class="button success" data-result="Slot seen">Log slot seen</button>
+            <button class="button danger" data-result="No slot">Log no slot</button>
+          </div>
+        </article>
+
+        <article class="card checklist-card">
+          <div class="card-heading">
+            <div><p class="label">Before you open the portal</p><h2>Preparation checklist</h2></div>
+            <button id="reset-checklist" class="text-button">Reset</button>
+          </div>
+          <div class="progress-row"><span id="progress-text">0% ready</span><div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div></div>
+          <div id="checklist"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="history" role="tabpanel" aria-labelledby="history-tab" hidden>
+      <article class="card">
+        <div class="card-heading"><div><p class="label">Stored on this device</p><h2>Recent attempts</h2></div><button id="clear-logs" class="text-button">Clear log</button></div>
+        <p class="muted">Up to 30 manual results are kept locally. No form data or portal details are recorded.</p>
+        <ol id="log-list" class="log-list"></ol>
+      </article>
+    </section>
+  </main>
+
+  <aside id="install-banner" class="install-banner" hidden>
+    <div><strong>Install this companion</strong><p>Keep your checklist and reminders within easy reach.</p></div>
+    <button id="install-app" class="button primary">Install</button>
+    <button id="dismiss-install" class="text-button" aria-label="Dismiss install message">Not now</button>
+  </aside>
+
+  <footer>Countdowns, local logs, and reminders only. Always use the official site to search and book.</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
