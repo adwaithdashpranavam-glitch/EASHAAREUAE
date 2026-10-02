@@ -2,6 +2,7 @@
   "name": "eashaareuae",
   "version": "1.0.0",
   "type": "module",
+  "exports": "./src/index.js",
   "scripts": {
     "test": "node --test",
     "build": "node -e \"import('./src/index.js')\""

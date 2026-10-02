@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as checklist from '../src/index.js';
+import * as checklist from 'eashaareuae';
 
-test('index exports all checklist helpers', () => {
+test('package entry point exports all checklist helpers', () => {
   const expected = [
     'getNextCheckTime',
     'formatCountdown',
