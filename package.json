@@ -1,0 +1,9 @@
+{
+  "name": "eashaareuae",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node -e \"import('./src/index.js')\""
+  }
+}
