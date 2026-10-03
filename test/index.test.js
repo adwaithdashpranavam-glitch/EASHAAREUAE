@@ -1,8 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as checklist from '../src/index.js';
+import { readFile } from 'node:fs/promises';
+import * as checklist from 'eashaareuae';
 
-test('index exports all checklist helpers', () => {
+const packageJson = JSON.parse(
+  await readFile(new URL('../package.json', import.meta.url), 'utf8'),
+);
+
+test('package metadata declares the public entry point', () => {
+  assert.equal(packageJson.main, './src/index.js');
+  assert.equal(packageJson.exports['.'], './src/index.js');
+});
+
+test('package entry point exports all checklist helpers', () => {
   const expected = [
     'getNextCheckTime',
     'formatCountdown',
