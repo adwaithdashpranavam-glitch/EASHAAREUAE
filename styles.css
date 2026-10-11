@@ -1,0 +1,34 @@
+:root { --ink:#102a43; --muted:#627d98; --surface:#fff; --background:#f0f7fa; --brand:#075985; --brand-dark:#0c4a6e; --green:#16845b; --red:#c0392b; --border:#d7e5ec; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--background); font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.hero { padding:64px max(24px,calc((100% - 1080px)/2)); color:#fff; background:linear-gradient(125deg,#083344,var(--brand) 68%,#0e7490); }
+.hero h1 { max-width:700px; margin:8px 0; font-size:clamp(2.2rem,6vw,4.5rem); line-height:1.04; letter-spacing:-.04em; }
+.hero>p { max-width:680px; font-size:1.1rem; color:#d9f2fa; }
+.eyebrow,.label { margin:0; text-transform:uppercase; letter-spacing:.12em; font-size:.74rem; font-weight:800; }
+.compliance { display:flex; flex-wrap:wrap; gap:8px 18px; max-width:760px; margin-top:26px; padding:13px 16px; border:1px solid #67c9dc; border-radius:12px; background:#083344aa; }
+main { width:min(1080px,calc(100% - 32px)); margin:28px auto 70px; }
+.tabs { display:flex; gap:8px; margin-bottom:16px; }
+.tab { padding:10px 16px; border:0; border-radius:999px; color:var(--brand); background:transparent; font:inherit; font-weight:750; cursor:pointer; }
+.tab.active { color:#fff; background:var(--brand); }
+.grid { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+.card { padding:25px; border:1px solid var(--border); border-radius:20px; background:var(--surface); box-shadow:0 12px 30px #0c4a6e0c; }
+.card h2 { margin:4px 0 14px; }
+.countdown-card { grid-row:span 2; }
+#countdown { display:block; margin:8px 0 0; color:var(--brand-dark); font-size:clamp(2.8rem,8vw,5.6rem); font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.06em; }
+.muted { color:var(--muted); }.small { font-size:.85rem; }
+.times-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:28px; }
+.time-tile { display:flex; justify-content:space-between; padding:14px; border:1px solid var(--border); border-radius:12px; background:#f8fbfc; }
+.time-tile span { color:var(--muted); }
+.button { display:inline-flex; justify-content:center; padding:11px 15px; border:0; border-radius:10px; color:#fff; font:inherit; font-weight:750; text-decoration:none; cursor:pointer; }
+.primary { background:var(--brand); }.primary:hover { background:var(--brand-dark); }.success { background:var(--green); }.danger { background:var(--red); }
+.booking-notice { padding:10px 12px; border-left:4px solid #d97706; background:#fff7e6; font-weight:750; }
+.result-actions { display:flex; gap:9px; margin-top:18px; }.result-actions .button { flex:1; }
+.card-heading { display:flex; align-items:start; justify-content:space-between; gap:10px; }
+.text-button { border:0; color:var(--brand); background:transparent; font:inherit; font-weight:750; cursor:pointer; }
+.progress-row { display:flex; align-items:center; gap:12px; margin:8px 0 18px; font-size:.85rem; font-weight:750; }
+.progress-track { flex:1; height:8px; overflow:hidden; border-radius:8px; background:#dbe7ec; }.progress-bar { width:0; height:100%; background:var(--green); transition:width .2s; }
+.check-item { display:flex; gap:11px; padding:12px 0; border-top:1px solid var(--border); cursor:pointer; }.check-item input { width:18px; height:18px; accent-color:var(--green); }
+.log-list { padding:0; list-style:none; }.log-item { display:flex; justify-content:space-between; gap:12px; padding:14px 0; border-top:1px solid var(--border); }.empty { color:var(--muted); font-style:italic; }
+.install-banner { position:fixed; right:18px; bottom:18px; display:flex; align-items:center; gap:15px; max-width:620px; padding:15px 18px; border:1px solid var(--border); border-radius:16px; background:#fff; box-shadow:0 12px 50px #102a4333; }.install-banner[hidden] { display:none; }.install-banner p { margin:2px 0 0; color:var(--muted); font-size:.85rem; }
+footer { padding:24px; color:var(--muted); text-align:center; }
+@media (max-width:760px) { .hero { padding-block:42px; }.grid { grid-template-columns:1fr; }.countdown-card { grid-row:auto; }.install-banner { left:12px; right:12px; flex-wrap:wrap; }.times-grid { grid-template-columns:1fr; } }

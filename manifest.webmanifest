@@ -1,0 +1,9 @@
+{
+  "name": "Appointment Check Companion",
+  "short_name": "Check Companion",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f0f7fa",
+  "theme_color": "#075985",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
